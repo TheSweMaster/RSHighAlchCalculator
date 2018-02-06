@@ -1,0 +1,71 @@
+﻿@model DisplayViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>High Alch Profit List</h3>
+<div>Current Nature Rune Price: <b>@Model.NaturePrice</b></div>
+<div>Items: @Model.ItemCount</div>
+<div>Profit Items: @Model.ProfitItemCount</div>
+<br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Profit
+                </th>
+                <th>
+                    Buy Price
+                </th>
+                <th>
+                    Sell Price
+                </th>
+                <th>
+                    High Alch
+                </th>
+                <th>
+                    Buy Quantity
+                </th>
+                <th>
+                    Sell Quantity
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.HighAlchList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Profit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuyPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SellPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HighAlch)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuyQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SellQuantity)
+                </td>
+                <td>
+                    <a asp-action="PriceDetails" asp-route-id="@item.Id">Price Details</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+

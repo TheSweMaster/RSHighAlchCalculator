@@ -1,0 +1,61 @@
+﻿@model IEnumerable<RSHighAlchCalculator.Models.HighAlchViewModel>
+
+@{
+    ViewData["Title"] = "ViewTest";
+}
+
+<h2>ViewTest</h2>
+<div>C</div>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HighAlch)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BuyPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SellPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Profit)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HighAlch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuyPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SellPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profit)
+            </td>
+            <td>
+                <a asp-action="PriceDetails" asp-route-id="@item.Id">Price Info</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

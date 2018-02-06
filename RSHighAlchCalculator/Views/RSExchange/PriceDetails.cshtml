@@ -1,0 +1,47 @@
+﻿@model RSHighAlchCalculator.Price.RsPriceData
+
+@{
+    ViewData["Title"] = "PriceDetails";
+}
+
+<h3>PriceDetails</h3>
+
+<div>
+    <h4>@ViewBag.ItemName</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Overall)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Overall)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Buying)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Buying)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Selling)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Selling)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BuyingQuantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BuyingQuantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SellingQuantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SellingQuantity)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
